@@ -23,3 +23,27 @@ document.addEventListener('keydown', event => {
     if(event.key==='ArrowLeft') {moveLeft();}
     if(event.key==='ArrowRight') {moveRight();}
 })
+
+let block = document.getElementById("block");
+let counter = 0;
+block.addEventListener('animationiteration', () => {
+    let random = Math.floor(Math.random() * 3);
+    left = random * 100;
+    block.style.left = left + "px";
+    counter++;
+})
+
+setInterval(function(){
+    let characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+    let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
+    let blockTop = parseInt(window.getComputedStyle(block).getPropertyValue("top"));
+    if(character == blockLeft && blockTop<500 && blockTop>300) {
+        alert("Game Over. Score: " + counter);
+        block.style.animation = "none";
+
+    }
+    
+},50);
+
+document.getElementById('left').addEventListener('touchstart', moveLeft);
+document.getElementById('right').addEventListener('touchstart', moveRight);
