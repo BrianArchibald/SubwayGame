@@ -3,15 +3,20 @@ function moveLeft() {
     parseInt(window.getComputedStyle(character).getPropertyValue("left"));
 
     left -= 100;
-    character.style.left = left + "px";
+    if (left>=0){
+        character.style.left = left + "px";
+    }
+
 }
 
 function moveRight() {
-    let right =
-    parseInt(window.getComputedStyle(character).getPropertyValue("right"));
+    let left =
+    parseInt(window.getComputedStyle(character).getPropertyValue("left"));
 
-    right += 100;
-    character.style.right = right + "px";
+    left += 100;
+    if (left<300){
+        character.style.left = left + "px";
+    }
 }
 
 document.addEventListener('keydown', event => {
