@@ -8,7 +8,7 @@
     height: 500px;
     border: 1px solid black;
     margin: auto;
-    margin-top: auto;
+   
     box-sizing: border-box;
 }
 
@@ -26,12 +26,12 @@
     height: 100px;
     background-color: rgb(180, 62, 20);
     position: relative;
-    animation: slide 1s infinite;
+    animation: slide 1.5s infinite;
 }
 
 @keyframes slide{
-    0%{top:-100px};
-    100%{top:500px};
+    0%{top:-100px;}
+    100%{top:500px;}
 }
 
 #white{

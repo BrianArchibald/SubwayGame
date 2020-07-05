@@ -6,7 +6,6 @@ function moveLeft() {
     if (left>=0){
         character.style.left = left + "px";
     }
-
 }
 
 function moveRight() {
@@ -37,12 +36,10 @@ setInterval(function(){
     let characterLeft = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     let blockTop = parseInt(window.getComputedStyle(block).getPropertyValue("top"));
-    if(character == blockLeft && blockTop<500 && blockTop>300) {
+    if(characterLeft == blockLeft && blockTop<500 && blockTop>400) {
         alert("Game Over. Score: " + counter);
         block.style.animation = "none";
-
     }
-    
 },50);
 
 document.getElementById('left').addEventListener('touchstart', moveLeft);
